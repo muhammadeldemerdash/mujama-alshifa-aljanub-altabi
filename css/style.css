@@ -536,7 +536,7 @@ section{ padding: 96px 0; }
   .main-nav{
     display: none;
     position: absolute;
-    top: 88px;
+    top: 100%;
     right: 0; left: 0;
     background: var(--white);
     flex-direction: column;
@@ -548,11 +548,22 @@ section{ padding: 96px 0; }
   .main-nav.is-open{ display: flex; }
   .main-nav a{ width: 100%; padding: 16px 28px; border-bottom: 1px solid var(--beige-100); }
   .nav-toggle{ display: flex; }
+  .header-inner{ height: auto; padding: 12px 0; gap: 12px; }
+  .brand-icon{ height: 40px; }
+  .brand-name{ font-size: 13px; }
+  .brand-name small{ font-size: 10px; }
+  .header-actions{ gap: 8px; }
+  .header-actions .btn{ padding: 9px 14px; font-size: 13px; }
   .about-cards, .doctors-grid, .articles-grid{ grid-template-columns: 1fr 1fr; }
   .dept-grid{ grid-template-columns: 1fr 1fr; }
   .location-inner{ grid-template-columns: 1fr; }
   .corporate-inner{ grid-template-columns: 1fr; }
   .footer-inner{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px){
+  .header-actions .btn{ display: none; }
+  .header-inner{ gap: 10px; }
+  .brand-name{ font-size: 12px; max-width: 150px; }
 }
 @media (max-width: 620px){
   .about-cards, .doctors-grid, .articles-grid, .dept-grid{ grid-template-columns: 1fr; }
