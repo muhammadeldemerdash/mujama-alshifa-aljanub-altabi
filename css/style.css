@@ -149,6 +149,32 @@ a:focus-visible, button:focus-visible{
   transition: transform .25s ease;
 }
 .main-nav a:hover::after{ transform: scaleX(1); }
+.main-nav a.is-active{ color: var(--brown-700); }
+.main-nav a.is-active::after{ transform: scaleX(1); }
+
+/* Dropdown */
+.nav-item{ position: relative; }
+.dropdown-toggle{ display: flex; align-items: center; gap: 6px; cursor: pointer; }
+.caret{ font-size: 10px; transition: transform .2s ease; }
+.dropdown-menu{
+  display: none;
+  flex-direction: column;
+  min-width: 200px;
+  background: var(--white);
+  border: 1px solid var(--beige-300);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 8px;
+}
+.dropdown-menu a{ padding: 10px 14px !important; border-radius: 4px; font-size: 14px; }
+.dropdown-menu a:hover{ background: var(--bg-soft); }
+.dropdown-menu a.is-active{ background: var(--beige-100); }
+.nav-item.is-open .dropdown-menu{ display: flex; }
+.nav-item.is-open .caret{ transform: rotate(180deg); }
+@media (min-width: 981px){
+  .dropdown-menu{ position: absolute; top: 100%; right: 0; margin-top: 10px; z-index: 50; }
+  .nav-item:hover .dropdown-menu{ display: flex; }
+}
 
 .header-actions{ display: flex; align-items: center; gap: 10px; }
 .nav-toggle{
