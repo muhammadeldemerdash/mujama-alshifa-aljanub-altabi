@@ -277,6 +277,39 @@ a:focus-visible, button:focus-visible{
   to{ transform: translateX(-50%); }
 }
 
+/* Insurance partners */
+.partners{ background: var(--white); padding: 64px 0 60px; }
+.partners-heading{ text-align: center; }
+.partners-heading .section-label{ display: inline-block; }
+.partners-title{
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(20px, 2.2vw, 26px);
+  color: var(--brown-900);
+  margin: 0 auto 36px;
+  max-width: 620px;
+}
+.partners-marquee{
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.partners-track{
+  display: flex;
+  align-items: center;
+  gap: 72px;
+  width: max-content;
+  animation: ticker 36s linear infinite;
+}
+.partner-logo{
+  height: 60px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  flex: none;
+}
+
 /* =========================================================
    Section shared
    ========================================================= */
@@ -363,7 +396,7 @@ section{ padding: 96px 0; }
 .doctors{ background: var(--white); }
 .doctors-grid{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 .doctor-card{
@@ -374,7 +407,10 @@ section{ padding: 96px 0; }
   padding-bottom: 24px;
 }
 .doctor-photo{
-  height: 220px;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
   background: linear-gradient(160deg, var(--beige-100), var(--beige-300));
 }
 .doctor-card h3{ font-size: 17px; margin: 20px 0 6px; }
@@ -570,4 +606,7 @@ section{ padding: 96px 0; }
   .footer-inner{ grid-template-columns: 1fr; }
   .hero{ min-height: auto; }
   section{ padding: 64px 0; }
+  .partners{ padding: 48px 0 44px; }
+  .partner-logo{ height: 40px; max-width: 110px; }
+  .partners-track{ gap: 40px; }
 }
